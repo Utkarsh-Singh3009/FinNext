@@ -1,11 +1,30 @@
-# Full Stack AI Fianace Platform with Next JS, Supabase, Tailwind, Prisma, Inngest, ArcJet, Shadcn UI Tutorial 🔥🔥
-## https://youtu.be/egS6fnZAdzk
+# 💸 Full Stack AI Finance Platform
 
-<img width="1470" alt="Screenshot 2024-12-10 at 9 45 45 AM" src="https://github.com/user-attachments/assets/1bc50b85-b421-4122-8ba4-ae68b2b61432">
+Built using **Next.js**, **Supabase**, **TailwindCSS**, **Prisma**, **Inngest**, **ArcJet**, and **Shadcn UI**.
 
-### Make sure to create a `.env` file with following variables -
 
-```
+![Dashboard Preview](public/dashboard-preview.jpg)
+
+
+---
+
+## 📦 Features
+
+- ✅ Modern UI with Shadcn components & TailwindCSS
+- 🔐 Clerk Authentication (Sign in, Sign up, Onboarding)
+- 🧾 AI-Powered Receipt Scanning (Gemini API)
+- 📬 Email integration via Resend
+- 🧠 Background jobs with Inngest
+- 🚀 Optimized performance with ArcJet
+- 🗃️ PostgreSQL (via Supabase) using Prisma ORM
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env` file in the root directory and fill in your credentials:
+
+```env
 DATABASE_URL=
 DIRECT_URL=
 
@@ -22,3 +41,56 @@ RESEND_API_KEY=
 
 ARCJET_KEY=
 ```
+
+---
+
+## 🛠️ Getting Started
+
+1. **Clone the Repository**
+
+```bash
+git clone https://github.com/Utkarsh-Singh3009/FinNext.git
+cd FinNext
+```
+
+2. **Install Dependencies**
+
+```bash
+npm install
+```
+
+3. **Set Up Database**
+
+```bash
+npx prisma migrate dev
+```
+
+4. **Run the App**
+
+```bash
+npm run dev
+```
+
+---
+
+## 📁 Tech Stack
+
+| Tech         | Role                         |
+|--------------|------------------------------|
+| Next.js      | Frontend Framework (App Router) |
+| Supabase     | PostgreSQL Database + Auth   |
+| Prisma       | ORM for DB interaction       |
+| TailwindCSS  | Styling                      |
+| Clerk        | Authentication               |
+| Inngest      | Background jobs              |
+| Gemini API   | AI Receipt Scanner           |
+| Resend       | Email Service                |
+| ArcJet       | Edge Optimization            |
+
+---
+
+## 📬 Contact
+
+Made with 💻 by [Utkarsh Singh](https://github.com/Utkarsh-Singh3009)
+
+---
