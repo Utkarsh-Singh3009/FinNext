@@ -3,7 +3,7 @@
 Built using **Next.js**, **Supabase**, **TailwindCSS**, **Prisma**, **Inngest**, **ArcJet**, and **Shadcn UI**.
 
 
-![Dashboard Preview](public/dashboard-preview.jpg)
+![Dashboard Preview](public/dashboard-preview2.jpg)
 
 
 ---
