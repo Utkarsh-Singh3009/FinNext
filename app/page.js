@@ -1,3 +1,5 @@
+// In app/page.js
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -13,27 +15,30 @@ import Link from "next/link";
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen bg-white relative overflow-x-hidden">
+    // Use the theme's background color
+    <div className="min-h-screen bg-background relative overflow-x-hidden">
       {/* Decorative Background Gradients */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-100 via-blue-50 to-transparent rounded-full opacity-40 blur-2xl -z-10" />
-      <div className="absolute bottom-0 right-0 w-[32rem] h-[32rem] bg-gradient-to-tr from-indigo-100 via-purple-100 to-transparent rounded-full opacity-30 blur-2xl -z-10" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-100 via-blue-50 to-transparent rounded-full opacity-40 blur-2xl -z-10 dark:from-blue-900/50 dark:via-blue-950/50" />
+      <div className="absolute bottom-0 right-0 w-[32rem] h-[32rem] bg-gradient-to-tr from-indigo-100 via-purple-100 to-transparent rounded-full opacity-30 blur-2xl -z-10 dark:from-indigo-900/50 dark:via-purple-950/50" />
 
       {/* Hero Section */}
       <HeroSection />
 
       {/* Stats Section */}
-      <section className="py-16 bg-blue-50/60">
+      <section className="py-16 bg-secondary/60">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {statsData.map((stat, index) => (
               <div
                 key={index}
-                className="text-center bg-white rounded-2xl shadow-md py-8 px-4 transition-transform hover:scale-105"
+                className="text-center bg-card rounded-2xl shadow-md py-8 px-4 transition-transform hover:scale-105"
               >
-                <div className="text-4xl font-extrabold text-blue-600 mb-2 drop-shadow">
+                <div className="text-4xl font-extrabold text-primary mb-2 drop-shadow">
                   {stat.value}
                 </div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-muted-foreground font-medium">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -41,7 +46,7 @@ const LandingPage = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-gradient-to-b from-white via-blue-50 to-white">
+      <section id="features" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-extrabold text-center mb-14 tracking-tight">
             Everything you need to manage your finances
@@ -49,15 +54,15 @@ const LandingPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {featuresData.map((feature, index) => (
               <Card
-                className="p-8 rounded-3xl shadow-xl border-0 bg-white/80 hover:shadow-2xl transition-all"
+                className="p-8 rounded-3xl shadow-xl border-0 bg-card/80 hover:shadow-2xl transition-all"
                 key={index}
               >
                 <CardContent className="space-y-5 pt-2 flex flex-col items-center text-center">
-                  <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-100 mb-2 text-3xl">
+                  <div className="w-16 h-16 flex items-center justify-center rounded-full bg-secondary mb-2 text-3xl">
                     {feature.icon}
                   </div>
                   <h3 className="text-2xl font-semibold">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <p className="text-muted-foreground">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -66,7 +71,7 @@ const LandingPage = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 via-white to-blue-50">
+      <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-extrabold text-center mb-16 tracking-tight">
             How It Works
@@ -75,13 +80,13 @@ const LandingPage = () => {
             {howItWorksData.map((step, index) => (
               <div
                 key={index}
-                className="text-center bg-white rounded-2xl shadow-md p-8 transition-transform hover:scale-105"
+                className="text-center bg-card rounded-2xl shadow-md p-8 transition-transform hover:scale-105"
               >
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+                <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
                   {step.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-4">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <p className="text-muted-foreground">{step.description}</p>
               </div>
             ))}
           </div>
@@ -89,7 +94,7 @@ const LandingPage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-white">
+      <section id="testimonials" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-extrabold text-center mb-16 tracking-tight">
             What Our Users Say
@@ -98,7 +103,7 @@ const LandingPage = () => {
             {testimonialsData.map((testimonial, index) => (
               <Card
                 key={index}
-                className="p-8 rounded-3xl shadow-xl border-0 bg-blue-50/60 hover:shadow-2xl transition-all"
+                className="p-8 rounded-3xl shadow-xl border-0 bg-secondary/60 hover:shadow-2xl transition-all"
               >
                 <CardContent className="pt-4">
                   <div className="flex items-center mb-4">
@@ -110,11 +115,17 @@ const LandingPage = () => {
                       className="rounded-full border-2 border-blue-200"
                     />
                     <div className="ml-4">
-                      <div className="font-semibold text-lg">{testimonial.name}</div>
-                      <div className="text-sm text-gray-600">{testimonial.role}</div>
+                      <div className="font-semibold text-lg">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {testimonial.role}
+                      </div>
                     </div>
                   </div>
-                  <p className="text-gray-700 italic">"{testimonial.quote}"</p>
+                  <p className="text-foreground/80 italic">
+                    &quot;{testimonial.quote}&quot;
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -129,7 +140,8 @@ const LandingPage = () => {
             Ready to Take Control of Your Finances?
           </h2>
           <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-lg">
-            Join thousands of users who are already managing their finances smarter with FinNext
+            Join thousands of users who are already managing their finances
+            smarter with FinNext
           </p>
           <Link href="/dashboard">
             <Button

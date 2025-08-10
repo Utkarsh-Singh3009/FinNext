@@ -5,12 +5,13 @@ import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { checkUser } from "@/lib/checkUser";
 import Image from "next/image";
+import { ModeToggle } from "./mode-toggle"; // 1. ADD THIS IMPORT
 
 const Header = async () => {
   await checkUser();
 
   return (
-    <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
+    <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/">
           <Image
@@ -61,6 +62,9 @@ const Header = async () => {
               <Button variant="outline">Login</Button>
             </SignInButton>
           </SignedOut>
+          
+          <ModeToggle /> {/* 2. ADD THE TOGGLE COMPONENT HERE */}
+
           <SignedIn>
             <UserButton
               appearance={{
